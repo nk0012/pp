@@ -3,16 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You Said Yes! 💖</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Yay! You Said Yes! 💖</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff0f5;
+      color: #4a4a4a;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Confetti Animation */
+    #confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.8);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin: 0;
+      color: #ff6f61;
+      animation: bounce 2s infinite;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    /* GIF Section */
+    .gif-section {
+      padding: 50px 20px;
+      background-color: #fff;
+      animation: slideIn 2s ease-in-out;
+    }
+
+    .gif-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ff6f61;
+    }
+
+    .gif-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .gif-container img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gif-container img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Playful Text Section */
+    .playful-text {
+      padding: 50px 20px;
+      background-color: #fff0f5;
+      animation: slideIn 2s ease-in-out;
+    }
+
+    .playful-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ff6f61;
+    }
+
+    .playful-text p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px;
+      background-color: #4a4a4a;
+      color: white;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      .gif-container img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <section class="page active">
-    <div class="content">
-      <h1>Yay! You Said Yes! 🎉</h1>
-      <p>You've made me the happiest person in the world! I can't wait for our journey together. 💕</p>
-      <img src="bubu-cue-bubu-dancing.gif" alt="Happy Dance GIF" class="gif">
+  <!-- Confetti Animation -->
+  <canvas id="confetti"></canvas>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Yay! You Said Yes! 💖</h1>
+    <p>This is the beginning of something amazing... 🥰</p>
+  </section>
+
+  <!-- Exciting GIF Section -->
+  <section class="gif-section">
+    <h2>Let's Celebrate!</h2>
+    <div class="gif-container">
+      <img src="https://media.giphy.com/media/3o7aD2d7hy9ktXNDP2/giphy.gif" alt="Celebration GIF 1">
+      <img src="https://media.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif" alt="Celebration GIF 2">
+      <img src="https://media.giphy.com/media/3o7TKsQ8E4bD4uYz6E/giphy.gif" alt="Celebration GIF 3">
     </div>
   </section>
+
+  <!-- Playful Text Section -->
+  <section class="playful-text">
+    <h2>You've Made Me the Happiest Person! 🥳</h2>
+    <p>I can't wait to see where this journey takes us. 💕</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with love by [Your Name] 💌</p>
+  </footer>
+
+  <!-- Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    // Confetti Animation
+    const confettiSettings = { target: 'confetti' };
+    const confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+
+    // Stop confetti after 10 seconds
+    setTimeout(() => confetti.clear(), 10000);
+  </script>
 </body>
 </html>
