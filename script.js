@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "sorry, to say but...",
         "I don't want you to say no 🥹",
         "so, i have removed the no button 😏"
-
     ];
 
     noButton.addEventListener("mouseover", function () {
@@ -61,8 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
             yesButton.style.transform = 'scale(1.5)';
             yesButton.style.backgroundColor = '#ff4a3d';
         }
-    });
-
     });
 
     // Function to show a popup with a countdown
