@@ -63,11 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // No Button Click: Final Message & Redirect
-    noButton.addEventListener("click", function () {
-        showPopup("Just kidding! You can't say no! 😉", () => {
-            window.location.href = "no.html"; 
-        });
     });
 
     // Function to show a popup with a countdown
